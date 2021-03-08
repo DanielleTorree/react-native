@@ -5,7 +5,6 @@ import {
   Image, 
   FlatList,
   TouchableOpacity,
-  Text
 } from 'react-native';
 import Lista from './src/Lista'
 
@@ -48,7 +47,7 @@ class App extends Component{
           descricao: 'Isso sim que é TI!', 
           imgperfil: 'https://sujeitoprogramador.com/instareact/fotoPerfil1.png', 
           imgPublicacao: 'https://sujeitoprogramador.com/instareact/foto4.png', 
-          likeada: false, 
+          likeada: true, 
           likers: 1
         },
         {
@@ -89,6 +88,7 @@ class App extends Component{
         //Properties are describing the characteristics of an object.
         
         showsHorizontalScroolIndicator={false}
+        keyExtractor={(item) => item.id}
         data={this.state.feed}
         renderItem={({item}) => <Lista data={item}/>}
         />
